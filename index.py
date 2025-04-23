@@ -52,7 +52,7 @@ def is_mobile_available(mobile_number: str, isd_code: str = "91", retries: int =
     return False
 
 class PhoneNumber(BaseModel):
-    phone_number: int
+    phone_number: str
 
 @app.get('/')
 def root():
