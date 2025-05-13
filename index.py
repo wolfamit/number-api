@@ -33,6 +33,7 @@ header = {
 def is_mobile_available(mobile_number: str, isd_code: str = "91", retries: int = 100, delay: int = 1) -> bool:
     print(f"Waiting for availability...")
     url = f"{os.getenv('AVAILABILITY_URL')}{mobile_number}&isd={isd_code}"
+    return True
     for attempt in range(1, retries + 1):
         try:
             responsemob = requests.get(url, headers=header, proxies=proxy,timeout=10, verify=False)
